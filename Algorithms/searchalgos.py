@@ -32,11 +32,18 @@ def binary_search(x,seq):
 			l = mid+1
 	return False
 
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Dec 15 19:35:37 2020
+
+@author: rt2
+"""
+
+
 def jump_search(x,arr):
 	"""
 	Jump search algo implemenation
 	"""
-	print("Jump Search started!")
 	n = len(arr)
 	step = int(n**0.5)
 	arr=sorted(arr)
@@ -47,13 +54,18 @@ def jump_search(x,arr):
 		elif arr[i] == x:
 			return i
 		else:
+			#found a number bigger than x
 			break
-	if i<step:
-		return -1
+	# after for loop ends, applying linear search for last 
+	# left-out chunk of array
+	if i < n:
+		for j in range(i,n):
+			if arr[j] == x:
+				return i
+	# Applying linear search for selected range of elements in array
 	for j in range(i-step, i):
 		if arr[j] == x:
-			return i
-			break
+			return j
 	else:
 		return -1
 
