@@ -13,6 +13,7 @@ def selection_sort(arr):
 		arr[min_indx], arr[i] = arr[i], arr[min_indx]
 	return arr
 
+# Insertion sort
 def insertion_sort(l):
 	print()
 	print("Insertion sort: ")
